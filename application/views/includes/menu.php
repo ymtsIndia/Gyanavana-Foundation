@@ -29,7 +29,8 @@
       <form class="d-flex" role="search">
         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
         <!-- <button class="btn btn-outline-success" type="submit">Login</button> -->
-        <a class="btn login-btn" href="#">Login</a>
+        <a class="btn login-btn" href="<?php echo base_url(); ?>login">Login</a>
+        <a class="btn login-btn" href="<?php echo base_url(); ?>signup" style="margin-left: 10px;background-color:white !important;color:deepskyblue !important;">Signup</a>
       </form>
     </div>
   </div>

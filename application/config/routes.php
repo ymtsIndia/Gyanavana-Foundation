@@ -64,3 +64,4 @@ $route['jall-sudh-service'] = 'welcome/jall_sudh_service';
 $route['waste-recycle-service'] = 'welcome/waste_recycle_service';
 $route['empowerment-service'] = 'welcome/empowerment_service';
 $route['contact'] = 'welcome/contact';
+$route['signup'] = 'welcome/signup';
