@@ -26,6 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] = 'http://192.168.1.103/school/';
 // $config['base_url'] = 'http://192.168.1.207/GitHub/gyanavana_foundation/';
 $config['base_url'] = 'http://localhost/GitHub/gyanavanafrontend/';
+$config['backend_url'] = 'http://192.168.1.14:8080/';
 
 /*
 |--------------------------------------------------------------------------

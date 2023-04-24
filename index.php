@@ -54,6 +54,7 @@
  * NOTE: If you change these, also change the error_reporting() code below
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	define('BACKEND_URL', 'http://192.168.1.4:8080/'); //backend url
 
 /*
  *---------------------------------------------------------------

@@ -243,23 +243,29 @@
 
     </div>
   </section> -->
+  
+<!--  --><?php //print_r($videos); ?>
+<!--  stdClass Object ( [message] => Videos fetched successfully [videos] => Array ( [0] => stdClass Object ( [id] => 1 [title] => First Video [videoPath] => uploads/serviceVideos/first_video_1682356598890.mp4 [description] => Imagine Dragons [createdAt] => 2023-04-24T17:16:38.960Z [updatedAt] => 2023-04-24T17:16:38.960Z [videoUrl] => http://192.168.1.4:8080/uploads/serviceVideos/first_video_1682356598890.mp4 ) [1] => stdClass Object ( [id] => 2 [title] => Second Video [videoPath] => uploads/serviceVideos/second_video_1682356603412.mp4 [description] => Imagine Dragons [createdAt] => 2023-04-24T17:16:43.460Z [updatedAt] => 2023-04-24T17:16:43.460Z [videoUrl] => http://192.168.1.4:8080/uploads/serviceVideos/second_video_1682356603412.mp4 ) [2] => stdClass Object ( [id] => 3 [title] => Third Video [videoPath] => uploads/serviceVideos/third_video_1682356608448.mp4 [description] => Imagine Dragons [createdAt] => 2023-04-24T17:16:48.497Z [updatedAt] => 2023-04-24T17:16:48.497Z [videoUrl] => http://192.168.1.4:8080/uploads/serviceVideos/third_video_1682356608448.mp4 ) [3] => stdClass Object ( [id] => 4 [title] => Fourth Video [videoPath] => uploads/serviceVideos/fourth_video_1682356612186.mp4 [description] => Imagine Dragons [createdAt] => 2023-04-24T17:16:52.235Z [updatedAt] => 2023-04-24T17:16:52.235Z [videoUrl] => http://192.168.1.4:8080/uploads/serviceVideos/fourth_video_1682356612186.mp4 ) [4] => stdClass Object ( [id] => 5 [title] => Fifth Video [videoPath] => uploads/serviceVideos/fifth_video_1682356615164.mp4 [description] => Imagine Dragons [createdAt] => 2023-04-24T17:16:55.206Z [updatedAt] => 2023-04-24T17:16:55.206Z [videoUrl] => http://192.168.1.4:8080/uploads/serviceVideos/fifth_video_1682356615164.mp4 ) [5] => stdClass Object ( [id] => 6 [title] => Sixth Video [videoPath] => uploads/serviceVideos/sixth_video_1682356618950.mp4 [description] => Imagine Dragons [createdAt] => 2023-04-24T17:16:59.001Z [updatedAt] => 2023-04-24T17:16:59.001Z [videoUrl] => http://192.168.1.4:8080/uploads/serviceVideos/sixth_video_1682356618950.mp4 ) ) )-->
+
 
   <section class="latest-projects">
     <div class="container1">
       
       <div class="row m-0">
         <div class="col-lg-6 p-0">
-        <iframe width="100%" height="400" src="https://www.youtube.com/embed/LPvby34KeOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="400" src="<?php echo $videos[0]->videoUrl ?>" title="<?php echo $videos[0]->title ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
           <div class="vid-title">Educate specially abled children</div>
         </div>
         <div class="col-lg-6">
         <h3 class="heading mb-4">Stories In Motion</h3>
           <div class="row m-0">
-            <div class="col-lg-6 col-md-6"><iframe width="100%" height="190" src="https://www.youtube.com/embed/LPvby34KeOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="col-lg-6 col-md-6"><iframe width="100%" height="190" src="https://www.youtube.com/embed/LPvby34KeOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="col-lg-6 col-md-6"><iframe width="100%" height="190" src="https://www.youtube.com/embed/LPvby34KeOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
-            <div class="col-lg-6 col-md-6"><iframe width="100%" height="190" src="https://www.youtube.com/embed/LPvby34KeOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+            <?php foreach ($videos as $video) { ?>
+                  <div class="col-lg-6 col-md-6">
+                      <iframe width="100%" height="190" src="<?php echo $video->videoUrl; ?>" title="<?php echo $video->title; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowfullscreen></iframe>
+                  </div>
+                <?php } ?>
           </div>
         </div>
       </div>

@@ -20,7 +20,18 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('index');
+		$post_url = BACKEND_URL	. 'website/get_service_videos';
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $post_url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$result = curl_exec($ch);
+		curl_close($ch);
+		
+
+
+		$data['videos'] = json_decode($result)->videos;
+			
+		$this->load->view('index', $data);
 	}
 	public function about()
 	{
