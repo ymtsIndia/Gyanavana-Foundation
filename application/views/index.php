@@ -253,19 +253,44 @@
       
       <div class="row m-0">
         <div class="col-lg-6 p-0">
-        <iframe width="100%" height="400" src="<?php echo $videos[0]->videoUrl ?>" title="<?php echo $videos[0]->title ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
           <div class="vid-title">Educate specially abled children</div>
         </div>
         <div class="col-lg-6">
         <h3 class="heading mb-4">Stories In Motion</h3>
           <div class="row m-0">
-            <?php foreach ($videos as $video) { ?>
-                  <div class="col-lg-6 col-md-6">
-                      <iframe width="100%" height="190" src="<?php echo $video->videoUrl; ?>" title="<?php echo $video->title; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="youtube">
+                      <iframe width="100%" height="auto" src="https://www.youtube.com/embed/LPvby34KeOA"
+                              title="YouTube video player" frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                               allowfullscreen></iframe>
                   </div>
-                <?php } ?>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="youtube">
+                      <iframe width="100%" height="auto" src="https://www.youtube.com/embed/LPvby34KeOA"
+                              title="YouTube video player" frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="youtube">
+                      <iframe width="100%" height="auto" src="https://www.youtube.com/embed/LPvby34KeOA"
+                              title="YouTube video player" frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowfullscreen></iframe>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="youtube">
+                      <iframe width="100%" height="auto" src="https://www.youtube.com/embed/LPvby34KeOA"
+                              title="YouTube video player" frameborder="0"
+                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                              allowfullscreen></iframe>
+                  </div>
+              </div>
           </div>
         </div>
       </div>

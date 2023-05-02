@@ -40,23 +40,60 @@
   <div class="container">
   <h3 class="heading">Get in Touch With Us!</h3>
   <p class="contact-info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sollicitudin consectetur netus dui, ultrices ornare lectus ac egestas. Vivamus tellus vestibulum aliquet.</p>
-  <form action="/" class="contact-us-form" method="post">
+  <form onsubmit="function submit_contact_form() {
+    var FullName = document.getElementById('FullName').value;
+    var Email = document.getElementById('Email').value;
+    var MobileNumber = document.getElementById('MobileNumber').value;
+    var Subject = document.getElementById('Subject').value;
+    var Message = document.getElementById('Message').value;
+    var data = {
+      FullName: FullName,
+      Email: Email,
+      MobileNumber: MobileNumber,
+      Subject: Subject,
+      Message: Message
+    }
+    //$.ajax({
+    //  url: '<?php //echo BACKEND_URL;?>//website/submit_contact_form',
+    //  type: 'POST',
+    //  data: data,
+    //  success: function (data) {
+    //    console.log(data);
+    //  }
+    //});
+    
+    fetch('<?php echo BACKEND_URL;?>website/submit_contact_form', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .then(response => {
+        console.log('Success:', response)
+        alert(response.message || 'Thank you for contacting us. We will get back to you soon.')
+          window.location.reload()
+      })
+      .catch(error => console.error('Error:', error));
+      
+  }
+  submit_contact_form()" class="contact-us-form"  method="post" action="javascript:void(0)" >
 
       <div class="row m-0">
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <input type="text" name="name" class="input-fields" id="" placeholder="Full Name">
+        <input type="text" name="FullName" class="input-fields" id="FullName" placeholder="Full Name">
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <input type="email" name="email" class="input-fields" id="" placeholder="Email Address">
+        <input type="email" name="Email" class="input-fields" id="Email" placeholder="Email Address">
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <input type="tel" name="mobile" class="input-fields" id=""  placeholder="Mobile Number">
+        <input type="tel" name="MobileNumber" class="input-fields" id="MobileNumber"  placeholder="Mobile Number">
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <input type="text" name="subject" class="input-fields" id=""  placeholder="Subject">
+        <input type="text" name="Subject" class="input-fields" id="Subject"  placeholder="Subject">
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <textarea name="message" id="" class="input-fields"  placeholder="Your Message"></textarea>
+        <textarea name="Message" id="Message" class="input-fields"  placeholder="Your Message"></textarea>
       </div>
 
       <input type="submit" value="Send" class="btn basic-btn">
@@ -110,6 +147,7 @@
   width: 75%;
   }
 </style>
+
 </body>
 
 </html>
